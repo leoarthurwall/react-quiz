@@ -68,3 +68,9 @@ body{
 .total-questions{
   font-size: 1.2rem;
 }
+.final-score-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
