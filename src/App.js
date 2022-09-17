@@ -6,7 +6,8 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
 
   const handleQuestionClick = () => {
-    setCurrentQuestion(currentQuestion + 1)
+    const nextQuestion = currentQuestion + 1
+    setCurrentQuestion(nextQuestion)
   }
   return (
     <div className="App">
