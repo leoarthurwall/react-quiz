@@ -9,7 +9,7 @@ const questions = [
     ]
   },  
   {
-    questionText: 'How many hearts does an octipus have?',
+    questionText: 'How many hearts does an octopus have?',
     answerOptions: [
         {answerText: '0', isCorrect: false},
         {answerText: '1', isCorrect: false},
