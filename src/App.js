@@ -6,14 +6,11 @@ function App() {
     <div className="App">
       <div className="quiz-container">
         <div className="left-container">
-          <h1 className="question-number">Question 1<span className="total-questions">/4</span></h1>
-          <h3 className="question">What is the capital of france?</h3>
+          <h1 className="question-number">Question 1<span className="total-questions">/{questions.length}</span></h1>
+          <h3 className="question">{questions[0].questionText}</h3>
         </div>
         <div className="right-container">
-          <button className="answer">London</button>
-          <button className="answer">New York</button>
-          <button className="answer">Paris</button>
-          <button className="answer">Madrid</button>
+        {questions[0].answerOptions.map((answerOption) => <button className="answer">{answerOption.answerText}</button>)}
         </div>
       </div>
     </div>
