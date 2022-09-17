@@ -40,7 +40,7 @@ body{
   padding-right: 0.5rem;
 }
 
-.answer{
+.answer-button{
   width: 90%;
   padding: 0.5rem;
   padding-left: 1rem;
@@ -54,7 +54,7 @@ body{
   font-size: 1rem;
 }
 
-.answer:hover{
+.answer-button:hover{
   background-color: rgb(65, 65, 152);
 }
 
@@ -70,10 +70,26 @@ body{
 }
 .final-score-container{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 .final-score{
   font-weight: 400;
+}
+.reset-button{
+  width: auto;
+  padding:5px 10px;  
+  text-align: left;
+  color: white;
+  background-color: rgb(44, 44, 72);
+  border: 4px solid rgb(65, 65, 152);
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.reset-button:hover{
+  background-color: rgb(65, 65, 152);
 }

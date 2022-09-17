@@ -31,6 +31,7 @@ function App() {
         {finalScore ? (
           <div className="final-score-container">
             <h2 className="final-score">You scored {score} out of {questions.length}</h2>
+            <button className="reset-button">Retry</button>
           </div>
         ) : (
           <>
@@ -45,7 +46,7 @@ function App() {
             </div>
             <div className="right-container">
               {questions[currentQuestion].answerOptions.map((answerOption) => (
-                <button className="answer" onClick={() => handleQuestionClick(answerOption.isCorrect)}>
+                <button className="answer-button" onClick={() => handleQuestionClick(answerOption.isCorrect)}>
                   {answerOption.answerText}
                 </button>
               ))}
