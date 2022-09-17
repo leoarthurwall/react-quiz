@@ -64,3 +64,6 @@ body{
 .question{
   font-weight: 300;
 }
+.total-questions{
+  font-size: 1.2rem;
+}

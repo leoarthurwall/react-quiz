@@ -5,7 +5,7 @@ function App() {
     <div className="App">
       <div className="quiz-container">
         <div className="left-container">
-          <h1 className="question-number">Question 1/4</h1>
+          <h1 className="question-number">Question 1<span className="total-questions">/4</span></h1>
           <h3 className="question">What is the capital of france?</h3>
         </div>
         <div className="right-container">
