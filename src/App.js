@@ -5,8 +5,14 @@ import { useState } from "react";
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [finalScore, setFinalScore] = useState(false);
+  const [score, setScore] = useState(0)
 
-  const handleQuestionClick = () => {
+  const handleQuestionClick = (isCorrect) => {
+    const currentScore = score + 1
+    if (isCorrect === true){
+      setScore(currentScore)
+    }
+
     const nextQuestion = currentQuestion + 1;
 
     if (nextQuestion < questions.length) {
@@ -20,7 +26,7 @@ function App() {
       <div className="quiz-container">
         {finalScore ? (
           <div className="final-score-container">
-            <h2 className="final-score">You scored 1 out of {questions.length}</h2>
+            <h2 className="final-score">You scored {score} out of {questions.length}</h2>
           </div>
         ) : (
           <>
@@ -35,7 +41,7 @@ function App() {
             </div>
             <div className="right-container">
               {questions[currentQuestion].answerOptions.map((answerOption) => (
-                <button className="answer" onClick={handleQuestionClick}>
+                <button className="answer" onClick={() => handleQuestionClick(answerOption.isCorrect)}>
                   {answerOption.answerText}
                 </button>
               ))}
