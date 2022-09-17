@@ -2,25 +2,22 @@ import "./index.css";
 import questions from "./questions";
 import { useState } from "react";
 
-//challenges
-//1. add a reset button
-//2. view previous scores
-
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [finalScore, setFinalScore] = useState(false);
   const [score, setScore] = useState(0);
   const [recordedScore, setRecordedScore] = useState(0);
 
-
-  const handleQuestionClick = (isCorrect) => {
+  //onClickHandler for the answer buttons
+  const handleAnswerClick = (isCorrect) => {
+    //if answer clicked matches true, score increments by 1
     const currentScore = score + 1;
     if (isCorrect === true) {
       setScore(currentScore);
     }
 
+    //if answer button is clicked, go to next question if question length isn't reached, otherwise set finalscore to true and render finalscore card
     const nextQuestion = currentQuestion + 1;
-
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
@@ -28,24 +25,26 @@ function App() {
     }
   };
 
+  //onClickHandler for the retry button
   const handleResetButton = () => {
-
+    //resets the states back to original settings
     setCurrentQuestion(0);
     setFinalScore(false);
-    setScore(0)
+    setScore(0);
 
-    setRecordedScore(score)
-  }
+    //stores the score as recorded score which can then be used to show previous score.
+    setRecordedScore(score);
+  };
 
   return (
     <div className="App">
       <div className="quiz-container">
         {finalScore ? (
           <div className="final-score-container">
-            <h2 className="final-score">
+            <h1 className="final-score">
               You scored {score} out of {questions.length}
-            </h2>
-            <p>Your Previous Score: {recordedScore}/10</p>
+            </h1>
+            <p>Previous Score: {recordedScore}</p>
             <button className="reset-button" onClick={handleResetButton}>
               Retry
             </button>
@@ -65,7 +64,7 @@ function App() {
               {questions[currentQuestion].answerOptions.map((answerOption) => (
                 <button
                   className="answer-button"
-                  onClick={() => handleQuestionClick(answerOption.isCorrect)}
+                  onClick={() => handleAnswerClick(answerOption.isCorrect)}
                 >
                   {answerOption.answerText}
                 </button>
