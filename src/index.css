@@ -1,27 +1,34 @@
-.App {
+body{
+  background-color: rgb(116, 255, 255);
   font-family: sans-serif;
 
+}
+.App {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
 }
 
 .quiz-container {
   display: flex;
 
-  height:300px;
+  height:260px;
   width: 500px;
-  background-color: rgb(87, 87, 253);
+  background-color: rgb(44, 44, 72);
   color: white;
   border-radius: 20px;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.75);
+
 }
 
 .left-container{
   display:flex;
   flex-direction: column;
   height: 100%;
-  width:60%;
+  width:50%;
+  padding-left: 1rem;
 }
 
 .right-container{
@@ -29,17 +36,31 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border: 3px solid red;
-  width:40%;
+  width:50%;
 }
 
 .answer{
   width: 80%;
   padding: 0.5rem;
+  padding-left: 1rem;
   text-align: left;
   color: white;
-  background-color: blue;
+  background-color: rgb(44, 44, 72);
+  border: 4px solid rgb(65, 65, 152);
+  border-radius: 10px;
   outline: none;
-  border: none;
   cursor: pointer;
+  font-size: 1rem;
+}
+
+.answer:hover{
+  background-color: rgb(65, 65, 152);
+}
+
+.question-number{
+  font-weight: 400;
+}
+
+.question{
+  font-weight: 300;
 }
