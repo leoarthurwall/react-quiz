@@ -10,6 +10,8 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [finalScore, setFinalScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [recordedScore, setRecordedScore] = useState(0);
+
 
   const handleQuestionClick = (isCorrect) => {
     const currentScore = score + 1;
@@ -27,11 +29,14 @@ function App() {
   };
 
   const handleResetButton = () => {
+
     setCurrentQuestion(0);
     setFinalScore(false);
     setScore(0)
+
+    setRecordedScore(score)
   }
-  
+
   return (
     <div className="App">
       <div className="quiz-container">
@@ -40,6 +45,7 @@ function App() {
             <h2 className="final-score">
               You scored {score} out of {questions.length}
             </h2>
+            <p>Your Previous Score: {recordedScore}/10</p>
             <button className="reset-button" onClick={handleResetButton}>
               Retry
             </button>
