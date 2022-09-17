@@ -9,12 +9,12 @@ import { useState } from "react";
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [finalScore, setFinalScore] = useState(false);
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(0);
 
   const handleQuestionClick = (isCorrect) => {
-    const currentScore = score + 1
-    if (isCorrect === true){
-      setScore(currentScore)
+    const currentScore = score + 1;
+    if (isCorrect === true) {
+      setScore(currentScore);
     }
 
     const nextQuestion = currentQuestion + 1;
@@ -25,13 +25,24 @@ function App() {
       setFinalScore(true);
     }
   };
+
+  const handleResetButton = () => {
+    setCurrentQuestion(0);
+    setFinalScore(false);
+    setScore(0)
+  }
+  
   return (
     <div className="App">
       <div className="quiz-container">
         {finalScore ? (
           <div className="final-score-container">
-            <h2 className="final-score">You scored {score} out of {questions.length}</h2>
-            <button className="reset-button">Retry</button>
+            <h2 className="final-score">
+              You scored {score} out of {questions.length}
+            </h2>
+            <button className="reset-button" onClick={handleResetButton}>
+              Retry
+            </button>
           </div>
         ) : (
           <>
@@ -46,7 +57,10 @@ function App() {
             </div>
             <div className="right-container">
               {questions[currentQuestion].answerOptions.map((answerOption) => (
-                <button className="answer-button" onClick={() => handleQuestionClick(answerOption.isCorrect)}>
+                <button
+                  className="answer-button"
+                  onClick={() => handleQuestionClick(answerOption.isCorrect)}
+                >
                   {answerOption.answerText}
                 </button>
               ))}
