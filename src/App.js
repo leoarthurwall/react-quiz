@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [finalScore, setFinalScore] = useState(true);
+  const [finalScore, setFinalScore] = useState(false);
 
   const handleQuestionClick = () => {
     const nextQuestion = currentQuestion + 1;
@@ -12,7 +12,7 @@ function App() {
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      alert("you have finished the quiz");
+      setFinalScore(true);
     }
   };
   return (
