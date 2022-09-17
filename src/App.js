@@ -1,4 +1,5 @@
 import "./index.css";
+import questions from "./questions";
 
 function App() {
   return (
