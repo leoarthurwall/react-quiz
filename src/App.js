@@ -4,6 +4,10 @@ import { useState } from "react";
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
+
+  const handleQuestionClick = () => {
+    setCurrentQuestion(currentQuestion + 1)
+  }
   return (
     <div className="App">
       <div className="quiz-container">
@@ -12,7 +16,7 @@ function App() {
           <h3 className="question">{questions[currentQuestion].questionText}</h3>
         </div>
         <div className="right-container">
-        {questions[currentQuestion].answerOptions.map((answerOption) => <button className="answer">{answerOption.answerText}</button>)}
+        {questions[currentQuestion].answerOptions.map((answerOption) => <button className="answer" onClick={handleQuestionClick}>{answerOption.answerText}</button>)}
         </div>
       </div>
     </div>
