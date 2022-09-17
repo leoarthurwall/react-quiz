@@ -20,7 +20,7 @@ function App() {
       <div className="quiz-container">
         {finalScore ? (
           <div className="final-score-container">
-            <h2>You scored 1 out of {questions.length}</h2>
+            <h2 className="final-score">You scored 1 out of {questions.length}</h2>
           </div>
         ) : (
           <>
