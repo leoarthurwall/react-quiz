@@ -2,6 +2,10 @@ import "./index.css";
 import questions from "./questions";
 import { useState } from "react";
 
+//challenges
+//1. add a reset button
+//2. view previous scores
+
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [finalScore, setFinalScore] = useState(false);
