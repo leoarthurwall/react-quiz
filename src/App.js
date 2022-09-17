@@ -1,9 +1,20 @@
-import './index.css';
+import "./index.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <div className="quiz-container">
+        <div className="left-container">
+          <h1>Question 1/4</h1>
+          <h3>What is the capital of france?</h3>
+        </div>
+        <div className="right-container">
+          <button className="answer">London</button>
+          <button className="answer">New York</button>
+          <button className="answer">Paris</button>
+          <button className="answer">Madrid</button>
+        </div>
+      </div>
     </div>
   );
 }
